@@ -12,7 +12,7 @@ ZMAGA = 'W'
 PORAZ = 'X'
 
 bazen_besed = []
-with open("besede.txt") as datoteka_bazena:
+with open("besede.txt", encoding='UTF-8') as datoteka_bazena:
     for beseda in datoteka_bazena:
         bazen_besed.append(beseda.strip().lower())
 
@@ -54,12 +54,11 @@ class Igra:
             if crka in self.crke:
                 trenutno += crka
             else:
-                trenotno += "_"
+                trenutno += "_"
         return trenutno
     
     def ugibaj(self, ugibana_crka):
         ugibana_crka = ugibana_crka.lower()
-
         if ugibana_crka in self.crke:
             return PONOVLJENA_CRKA
 
@@ -79,7 +78,7 @@ class Igra:
 
 
 
-def nova_igra(self):
+def nova_igra():
     nakljucna_beseda = random.choice(bazen_besed)
     return Igra(nakljucna_beseda)
 
